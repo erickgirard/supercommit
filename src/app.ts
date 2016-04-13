@@ -27,10 +27,7 @@ let notFound = function(req, res, next) {
   err.status = 404;
   next(err);
 }
-<<<<<<< HEAD
 
-=======
->>>>>>> ef73d9eab1b90566faaca0493c14dcd580105d05
 app.use(notFound);
 
 // error handlers
