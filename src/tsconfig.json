@@ -2,8 +2,12 @@
     "compilerOptions": {
         "module": "commonjs",
         "target": "es5",
+<<<<<<< HEAD
         "watch": true,
         "outDir": "../_publish"
+=======
+        "watch": true
+>>>>>>> ef73d9eab1b90566faaca0493c14dcd580105d05
     },
     "exclude": [
         "node_modules",

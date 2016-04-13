@@ -31,6 +31,9 @@ node_modules
 
 # Optional REPL history
 .node_repl_history
+<<<<<<< HEAD
 
 # Compiled typescript files
 _publish
+=======
+>>>>>>> ef73d9eab1b90566faaca0493c14dcd580105d05
