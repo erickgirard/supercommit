@@ -1,10 +1,9 @@
 #!/usr/bin/env node
+///<reference path='../typings/main.d.ts' />
 
 /**
  * Module dependencies.
  */
-
-require('babel-register');
 
 var app = require('../app');
 var debug = require('debug')('supercommit:server');

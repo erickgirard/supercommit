@@ -1,37 +1,43 @@
-import bodyParser = require('body-parser');
-import cookieParser = require('cookie-parser');
-import logger = require('morgan');
+import * as express from 'express';
+import * as bodyParser from 'body-parser';
+import * as cookieParser from 'cookie-parser';
+import * as logger from 'morgan';
+import * as path from 'path';
 
-import path = require('path');
-
-let _initBodyParser = (app : any) : void => {
+function initBodyParser (app : express.Application) : void {
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({ extended: false }));
 }
 
-let _configureViewEngine = (app : any, path : any) : void => {
+function configureViewEngine (app : express.Application) : void {
     // view engine setup
     app.set('views', path.join(__dirname, 'views'));
     app.set('view engine', 'jade');
 }
 
-let _configureCookieParser = (app : any) : void => {
+function configureCookieParser (app : express.Application) : void {
     app.use(cookieParser());
 }
 
-let _configureLogger = (app : any) : void => {
+function configureLogger (app : express.Application) : void {
     app.use(logger('dev'));
 }
 
-class MiddlewareConfig
-{
-    static configure(app : Express.Application)
-    {
-        _initBodyParser(app);
-        _configureViewEngine(app, path);
-        _configureCookieParser(app);
-        _configureLogger(app);
-    }
+function configureFavicon (app : express.Application) : void {
+    // uncomment after placing your favicon in /public
+    //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 }
 
-export = MiddlewareConfig;
+export default class MiddlewareConfig
+{
+    public static configure(app : express.Application) : void
+    {
+        initBodyParser(app);
+        configureViewEngine(app);
+        
+        configureCookieParser(app);
+        configureLogger(app);
+
+        configureFavicon(app);
+    }
+}

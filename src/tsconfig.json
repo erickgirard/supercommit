@@ -3,7 +3,8 @@
         "module": "commonjs",
         "target": "es5",
         "watch": true,
-        "outDir": "../_publish"
+        "outDir": "../_publish",
+        "pretty": true
     },
     "exclude": [
         "node_modules",

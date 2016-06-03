@@ -1,11 +1,15 @@
-import MiddlewareConfig = require('./middlewareconfig');
+import * as express from 'express';
 
-class Bootstrap
+import MiddlewareConfig from './middlewareconfig';
+import Routes from './routes';
+import EnvConfig from './envconfig';
+
+export default class Bootstrap
 {
-    static configure(app : Express.Application)
+    public static configure(app : express.Application) : void
     {
         MiddlewareConfig.configure(app);
+        Routes.configure(app);
+        EnvConfig.configure(app);
     }
 }
-
-export = Bootstrap;
